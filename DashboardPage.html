@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - The Secret Ingredient</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <!-- Using 'Fredoka One' for the playful 'Pony Club' style, consistent with previous pages. -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Fredoka One', cursive;
+            background-color: #fff8e1;
+            color: #d84315;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #ff6f00;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .logo {
+            font-size: 2em;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin: 0;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 10px 15px;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+        .nav-links a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); /* Same hero image for consistency: Appetizing food spread */
+            background-size: cover;
+            background-position: center;
+            height: 30vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4); /* Overlay for readability */
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 20px;
+        }
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .welcome-user {
+            font-size: 1.2em;
+            margin: 0;
+        }
+        .main-content {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .search-bar {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .search-bar input {
+            width: 60%;
+            max-width: 500px;
+            padding: 15px;
+            border: 2px solid #ffcc80;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-family: 'Fredoka One', cursive;
+            background-color: white;
+        }
+        .search-bar input:focus {
+            outline: none;
+            border-color: #ff6f00;
+        }
+        .section {
+            margin-bottom: 60px;
+        }
+        .section h2 {
+            font-size: 2.5em;
+            color: #ff6f00;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .recipes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .recipe-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .recipe-card:hover {
+            transform: translateY(-5px);
+        }
+        .recipe-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .recipe-info {
+            padding: 20px;
+        }
+        .recipe-info h3 {
+            color: #d84315;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+        .recipe-info p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+        .recipe-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .recipe-actions button {
+            background-color: #ff6f00;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Fredoka One', cursive;
+            font-size: 0.9em;
+        }
+        .recipe-actions button:hover {
+            background-color: #e65100;
+        }
+        .quick-actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .quick-actions a {
+            background-color: #ffcc80;
+            color: #d84315;
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+        .quick-actions a:hover {
+            background-color: #ff6f00;
+            color: white;
+        }
+        footer {
+            background-color: #ff6f00;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            .nav-links { flex-direction: column; gap: 10px; }
+            .logo { font-size: 1.5em; }
+            .hero h2 { font-size: 2em; }
+            .hero { height: 25vh; }
+            .search-bar input { width: 90%; }
+            .recipes-grid { grid-template-columns: 1fr; }
+            .quick-actions { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="logo">The Secret Ingredient</h1>
+        <nav class="nav-links">
+            <a href="index.html">Home</a> <!-- Link back to landing page -->
+            <a href="#recipes">Recipes</a>
+            <a href="#profile">Profile</a>
+            <a href="#logout">Logout</a> <!-- Placeholder for logout functionality -->
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Dashboard</h2>
+            <p class="welcome-user">Welcome back, Chef [Username]! Let's cook up something amazing today.</p> <!-- Replace [Username] with dynamic user data -->
+        </div>
+    </section>
+
+    <main class="main-content">
+        <section class="search-bar">
+            <input type="text" placeholder="Search for recipes, ingredients, or secrets..." onfocus="this.placeholder=''">
+        </section>
+
+        <section class="section">
+            <h2>Featured Recipes</h2>
+            <div class="recipes-grid">
+                <div class="recipe-card">
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.0Sasid0C9PV1EnpnuvV_6gHaEP?pid=Api&P=0&h=180" alt="Fresh Veggie Stir-Fry"> <!-- Food image: Veggies -->
+                    <div class="recipe-info">
+                        <h3>Secret Veggie Stir-Fry</h3>
+                        <p>A quick, healthy meal with a hidden spice twist. Ready in 20 minutes!</p>
+                        <div class="recipe-actions">
+                            <span>★ ★ ★ ★ ★ (4.8)</span>
+                            <button>View Recipe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="recipe-card">
+                    <img src="http://www.prettydesigns.com/wp-content/uploads/2015/02/Molten-Lava-Cake.jpg" alt="Chocolate Lava Cake"> <!-- Food image: Dessert -->
+                    <div class="recipe-info">
+                        <h3>Molten Chocolate Secret</h3>
+                        <p>Indulge in gooey chocolate bliss with our pro baker's tip.</p>
+                        <div class="recipe-actions">
+                            <span>★ ★ ★ ★ ★ (4.9)</span>
+                            <button>View Recipe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="recipe-card">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Creamy Pasta"> <!-- Food image: Pasta -->
+                    <div class="recipe-info">
+                        <h3>Hidden Herb Pasta</h3>
+                        <p>Creamy sauce with a secret ingredient that elevates the flavor.</p>
+                        <div class="recipe-actions">
+                            <span>★ ★ ★ ★ ★ (4.7)</span>
+                            <button>View Recipe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Quick Actions</h2>
+            <div class="quick-actions">
+                <a href="#add-recipe">Add Your Recipe</a>
+                <a href="#favorites">View Favorites</a>
+                <a href="#shopping-list">Shopping List</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 The Secret Ingredient. All rights reserved. Made with ❤️ for food lovers.</p>
+    </footer>
+</body>
+</html>
