@@ -1,217 +1,152 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - The Secret Ingredient</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-    <!-- Using 'Fredoka One' for the playful 'Pony Club' style, consistent with the landing page. -->
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Fredoka One', cursive;
-            background-color: #fff8e1;
-            color: #d84315;
-            line-height: 1.6;
-        }
-        header {
-            background-color: #ff6f00;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        h1 {
-            font-size: 3em;
-            margin: 0;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        .hero {
-            background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); /* Same hero image as landing for consistency: Appetizing food spread */
-            background-size: cover;
-            background-position: center;
-            height: 40vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.4); /* Overlay for readability */
-        }
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            padding: 20px;
-        }
-        .hero h2 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        .login-section {
-            padding: 60px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .login-form {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-            width:500px;
-            margin: 0 auto;
-            display: inline-block;
-        }
-        .login-form h2 {
-            font-size: 2em;
-            color: #ff6f00;
-            margin-bottom: 30px;
-        }
-        .form-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            color: #d84315;
-            font-weight: bold;
-        }
-        .form-group input {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #ffcc80;
-            border-radius: 10px;
-            font-size: 1em;
-            font-family: 'Fredoka One', cursive;
-            box-sizing: border-box;
-        }
-        .form-group input:focus {
-            outline: none;
-            border-color: #ff6f00;
-        }
-        .checkbox-group {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            text-align: left;
-        }
-        .checkbox-group input[type="checkbox"] {
-            width: auto;
-            margin-right: 10px;
-        }
-        .forgot-password {
-            display: block;
-            text-align: right;
-            color: #ff6f00;
-            text-decoration: none;
-            font-size: 0.9em;
-            margin-bottom: 20px;
-        }
-        .forgot-password:hover {
-            text-decoration: underline;
-        }
-        .login-button {
-            background-color: #ff6f00;
-            color: white;
-            padding: 15px 30px;
-            font-size: 1.2em;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            text-decoration: none;
-            display: block;
-            width: 100%;
-            margin-bottom: 20px;
-            transition: background-color 0.3s;
-            font-family: 'Fredoka One', cursive;
-        }
-        .login-button:hover {
-            background-color: #e65100;
-        }
-        .signup-link {
-            color: #d84315;
-            text-decoration: none;
-            font-size: 1em;
-        }
-        .signup-link:hover {
-            text-decoration: underline;
-        }
-        .divider {
-            text-align: center;
-            margin: 20px 0;
-            color: #555;
-        }
-        .divider::before,
-        .divider::after {
-            content: ' | ';
-            color: #ffcc80;
-        }
-        footer {
-            background-color: #ff6f00;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-        @media (max-width: 768px) {
-            h1 { font-size: 2em; }
-            .hero h2 { font-size: 2em; }
-            .hero { height: 30vh; }
-            .login-form { padding: 20px; }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - The Secret Ingredient</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Fredoka One', cursive;
+      background-color: #fff8e1;
+      color: #d84315;
+      display: flex;
+      height: 100vh;
+    }
+
+    /* ===== LEFT SIDE: FOOD IMAGES ===== */
+    .image-section {
+      flex: 1;
+      background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=2070&q=80')
+        no-repeat center center/cover;
+      position: relative;
+    }
+    .image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    .image-text {
+      position: absolute;
+      bottom: 40px;
+      left: 30px;
+      color: white;
+      font-size: 2em;
+      z-index: 2;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    /* ===== RIGHT SIDE: LOGIN FORM ===== */
+    .login-container {
+      flex: 1;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #ff6f00;
+      margin-bottom: 30px;
+      font-size: 2em;
+    }
+
+    input {
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      border: 2px solid #ffcc80;
+      border-radius: 10px;
+      font-family: 'Fredoka One', cursive;
+      font-size: 1em;
+    }
+    input:focus {
+      outline: none;
+      border-color: #ff6f00;
+    }
+
+    button {
+      background-color: #ff6f00;
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-family: 'Fredoka One', cursive;
+      font-size: 1em;
+      width: 100%;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #e65100;
+    }
+
+    .error {
+      color: red;
+      font-size: 0.9em;
+      margin-top: 10px;
+    }
+
+    /* ===== Mobile Responsiveness ===== */
+    @media (max-width: 900px) {
+      body {
+        flex-direction: column;
+      }
+      .image-section {
+        height: 40vh;
+      }
+      .login-container {
+        height: 60vh;
+        width: 100%;
+      }
+      .image-text {
+        font-size: 1.5em;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>The Secret Ingredient</h1>
-    </header>
+  <!-- LEFT SIDE: Food images -->
+  <div class="image-section">
+    <div class="image-overlay"></div>
+    <div class="image-text">The Secret Ingredient 🍲</div>
+  </div>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Welcome Back, Chef!</h2>
-            <p>Log in to access your saved recipes and unlock more culinary secrets.</p>
-        </div>
-    </section>
+  <!-- RIGHT SIDE: Login box -->
+  <div class="login-container">
+    <h1>Welcome Back, Chef!</h1>
+    <input type="text" id="username" placeholder="Enter Username" required />
+    <input type="password" id="password" placeholder="Enter Password" required />
+    <button onclick="login()">Login</button>
+    <p class="error" id="error-msg"></p>
+  </div>
 
-    <section class="login-section">
-        <form class="login-form" action="/login" method="POST"> <!-- Placeholder action; integrate with backend as needed -->
-            <h2>Login</h2>
-            
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required placeholder="Enter your email">
-            </div>
-            
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required placeholder="Enter your password">
-            </div>
-            
-            <div class="checkbox-group">
-                <input type="checkbox" id="remember" name="remember">
-                <label for="remember">Remember me</label>
-            </div>
-            
-            <a href="#forgot" class="forgot-password">Forgot your password?</a>
-            
-            <button type="submit" class="login-button">Login</button>
-        </form>
-        
-        <p class="divider">Don't have an account?</p>
-        <a href="signup.html" class="signup-link">Sign Up Here</a> <!-- Link to a signup page; create similarly if needed -->
-    </section>
+  <script>
+    function login() {
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const errorMsg = document.getElementById("error-msg");
 
-    
+      const correctUsername = "chef";
+      const correctPassword = "secret123";
+
+      if (username === correctUsername && password === correctPassword) {
+        localStorage.setItem("username", username);
+        window.location.href = "DashBoard.html";
+      } else {
+        errorMsg.textContent = "Invalid username or password!";
+      }
+    }
+  </script>
 </body>
 </html>
