@@ -1,0 +1,69 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "chef",
+      "email": "chef@secret-ingredient.com",
+      "password": "$2a$10$8K1p/a0dRTlB0Z6Q5Q5Q5O",
+      "createdAt": "2023-01-15T00:00:00.000Z",
+      "profile": {
+        "bio": "Passionate home chef exploring the world of flavors and secret ingredients!",
+        "favoriteCuisine": "Italian & Asian Fusion",
+        "cookingLevel": "Intermediate"
+      }
+    },
+    {
+      "id": 1762070761684,
+      "username": "Lino",
+      "email": "lino20122005@gmail.com",
+      "password": "$2a$10$ZLwIWQ0dRXEihV8cYawoa.qTXuBlbYwIVtk2JZIH/e/Lgdv6LQRHi",
+      "createdAt": "2025-11-02T08:06:01.684Z",
+      "profile": {
+        "bio": "Passionate home chef exploring the world of flavors and secret ingredients!",
+        "favoriteCuisine": "Various",
+        "cookingLevel": "Beginner"
+      }
+    }
+  ],
+  "favorites": [
+    {
+      "id": 1762070776026,
+      "userId": 1762070761684,
+      "recipeId": 5,
+      "recipe": {
+        "id": 5,
+        "title": "Secret Spice Burger",
+        "description": "Juicy burger with a hidden spice blend that will amaze your guests.",
+        "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+        "rating": "4.8"
+      },
+      "savedDate": "2025-11-02T08:06:16.026Z"
+    },
+    {
+      "id": 1762070779592,
+      "userId": 1762070761684,
+      "recipeId": 4,
+      "recipe": {
+        "id": 4,
+        "title": "Magic Morning Pancakes",
+        "description": "Fluffy pancakes with a secret ingredient for perfect texture every time.",
+        "image": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+        "rating": "4.6"
+      },
+      "savedDate": "2025-11-02T08:06:19.592Z"
+    }
+  ],
+  "recipes": [
+    {
+      "id": 1,
+      "title": "Secret Veggie Stir-Fry",
+      "description": "A quick, healthy meal with a hidden spice twist. Ready in 20 minutes!",
+      "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+      "rating": "4.8",
+      "prepTime": "10 mins",
+      "cookTime": "15 mins",
+      "servings": 2,
+      "difficulty": "Easy"
+    }
+  ]
+}

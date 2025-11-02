@@ -1,0 +1,322 @@
+.profile-page {
+  min-height: 100vh;
+  background-color: #fff8e1;
+}
+
+.profile-hero {
+  background: linear-gradient(135deg, #ff6f00 0%, #ff8f00 100%);
+  padding: 60px 20px;
+  color: white;
+}
+
+.profile-header {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3em;
+  font-weight: bold;
+  border: 4px solid white;
+}
+
+.profile-info h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.profile-bio {
+  font-size: 1.1em;
+  opacity: 0.9;
+  margin-bottom: 20px;
+  max-width: 600px;
+}
+
+.profile-stats {
+  display: flex;
+  gap: 30px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.stat-label {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+.profile-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.profile-tabs {
+  display: flex;
+  border-bottom: 2px solid #ffcc80;
+  margin-bottom: 30px;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  padding: 15px 30px;
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.1em;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-bottom: 3px solid transparent;
+}
+
+.tab-button.active {
+  color: #ff6f00;
+  border-bottom-color: #ff6f00;
+}
+
+.tab-button:hover {
+  color: #ff6f00;
+}
+
+.tab-content {
+  min-height: 400px;
+}
+
+.profile-details {
+  display: grid;
+  gap: 20px;
+}
+
+.detail-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.detail-card h3 {
+  color: #ff6f00;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: between;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  font-weight: bold;
+  color: #333;
+  min-width: 150px;
+}
+
+.detail-value {
+  color: #666;
+}
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.favorite-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.favorite-card:hover {
+  transform: translateY(-5px);
+}
+
+.favorite-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.favorite-info {
+  padding: 20px;
+}
+
+.favorite-info h4 {
+  color: #d84315;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.favorite-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.view-recipe-button {
+  background-color: #ff6f00;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Fredoka One', cursive;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.view-recipe-button:hover {
+  background-color: #e65100;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+}
+
+.empty-state h3 {
+  color: #d84315;
+  margin-bottom: 10px;
+}
+
+.explore-button {
+  background-color: #ff6f00;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: 'Fredoka One', cursive;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.explore-button:hover {
+  background-color: #e65100;
+}
+
+.settings-section {
+  display: grid;
+  gap: 30px;
+}
+
+.setting-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.setting-card h3 {
+  color: #ff6f00;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.setting-item:last-child {
+  border-bottom: none;
+}
+
+.setting-item label {
+  color: #333;
+  font-weight: bold;
+}
+
+.danger-zone {
+  background: #ffebee;
+  padding: 30px;
+  border-radius: 15px;
+  border: 2px solid #f44336;
+}
+
+.danger-zone h3 {
+  color: #d32f2f;
+  margin-bottom: 15px;
+}
+
+.danger-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: 'Fredoka One', cursive;
+  transition: background-color 0.3s;
+}
+
+.danger-button:hover {
+  background-color: #d32f2f;
+}
+
+.warning-text {
+  color: #d32f2f;
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .profile-stats {
+    justify-content: center;
+  }
+  
+  .profile-tabs {
+    flex-direction: column;
+  }
+  
+  .tab-button {
+    text-align: left;
+  }
+  
+  .detail-item {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .favorites-grid {
+    grid-template-columns: 1fr;
+  }
+}
